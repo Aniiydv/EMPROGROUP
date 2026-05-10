@@ -2,559 +2,2302 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Empreo Group Of Companies</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/7aa1e5e2a4.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 18px 0;
+        }
+
+        .navbar-brand {
+            color: #fff;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .navbar-brand span {
+            color: #ffc107;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin-left: 15px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #ffc107 !important;
+        }
+
+  .hero{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.hero-video{
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 1;
+}
+
+.hero-overlay{
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0,0,0,0.55);
+
+    z-index: 2;
+}
+
+.hero-container{
+    position: relative;
+    z-index: 3;
+}
+
+.hero-content{
+    max-width: 700px;
+    color: white;
+}
+
+.hero-content h1{
+    font-size: 72px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.hero-content p{
+    font-size: 20px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 35px;
+}
+
+.hero-btn{
+    display: inline-block;
+
+    padding: 16px 40px;
+
+    background: #ffc107;
+    color: black;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.4s;
+}
+
+.hero-btn:hover{
+    background: white;
+    transform: translateY(-5px);
+}
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px){
+
+    .hero-content h1{
+        font-size: 64px;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .hero-content h1{
+        font-size: 52px;
+    }
+
+    .hero-content p{
+        font-size: 18px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero{
+        height: 90vh;
+    }
+
+    .hero-content{
+        text-align: center;
+        margin: auto;
+        padding-top: 80px;
+    }
+
+    .hero-content h1{
+        font-size: 42px;
+    }
+
+    .hero-content p{
+        font-size: 16px;
+    }
+
+    .hero-btn{
+        min-width: 200px;
+        padding: 14px 30px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero-content h1{
+        font-size: 34px;
+    }
+
+    .hero-content p{
+        font-size: 15px;
+    }
+
+}
+.hero-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to right,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.35)
+    );
+
+    z-index:2;
+}
+.hero-content h1{
+    font-size:78px;
+    font-weight:800;
+    line-height:1.1;
+    color:white;
+
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+.hero-video{
+    animation: zoomEffect 20s infinite alternate;
+}
+
+@keyframes zoomEffect{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.08);
+    }
+
+}
+
+        /* =========================
+           BRANDS
+        ========================== */
+
+        .brands {
+            padding: 100px 0;
+        }
+
+        .brand-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            transition: 0.4s;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .brand-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+
+        .brand-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, 0.85),
+                    rgba(0, 0, 0, 0.1));
+        }
+
+        .brand-content {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            color: white;
+        }
+
+        .brand-content h4 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .brand-content p {
+            color: #ddd;
+        }
+
+      /* =========================
+   PREMIUM SERVICES SECTION
+========================= */
+
+.premium-services{
+    padding: 120px 0;
+    background: #050505;
+    position: relative;
+    overflow: hidden;
+}
+
+/* subtle background glow */
+
+.premium-services::before{
+    content: "";
+
+    position: absolute;
+    top: -200px;
+    left: -200px;
+
+    width: 500px;
+    height: 500px;
+
+    background: radial-gradient(
+        circle,
+        rgba(212,175,55,0.08),
+        transparent 70%
+    );
+
+    z-index: 1;
+}
+
+.premium-services .container{
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.section-header{
+    max-width: 750px;
+    margin: auto auto 70px;
+}
+
+.section-tag{
+    display: inline-block;
+
+    padding: 10px 22px;
+
+    border-radius: 50px;
+
+    background: rgba(212,175,55,0.1);
+
+    color: #d4af37;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.section-header h2{
+    font-size: 58px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.section-header p{
+    color: rgba(255,255,255,0.65);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* =========================
+   SERVICE CARD
+========================= */
+
+.premium-service-card{
+    position: relative;
+
+    background:
+    linear-gradient(
+        145deg,
+        #111111,
+        #0b0b0b
+    );
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 30px;
+
+    padding: 42px;
+
+    min-height: 320px;
+
+    transition: all 0.4s ease;
+
+    overflow: hidden;
+}
+
+/* hover glow */
+
+.premium-service-card::before{
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+    radial-gradient(
+        circle at top left,
+        rgba(212,175,55,0.12),
+        transparent 45%
+    );
+
+    opacity: 0;
+
+    transition: 0.4s;
+}
+
+.premium-service-card:hover::before{
+    opacity: 1;
+}
+
+.premium-service-card:hover{
+    transform: translateY(-10px);
+
+    border-color: rgba(212,175,55,0.25);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.45);
+}
+
+/* =========================
+   ICON
+========================= */
+
+.service-icon{
+    width: 82px;
+    height: 82px;
+
+    border-radius: 24px;
+
+    background: rgba(212,175,55,0.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 35px;
+
+    transition: 0.4s ease;
+}
+
+.service-icon i{
+    font-size: 34px;
+    color: #d4af37;
+}
+
+.premium-service-card:hover .service-icon{
+    transform: scale(1.08);
+    background: rgba(212,175,55,0.14);
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.premium-service-card h4{
+    color: white;
+    font-size: 38px;
+    font-weight: 700;
+
+    margin-bottom: 22px;
+}
+
+.premium-service-card p{
+    color: rgba(255,255,255,0.55);
+
+    font-size: 20px;
+
+    line-height: 1.9;
+
+    margin: 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px){
+
+    .section-header h2{
+        font-size: 48px;
+    }
+
+    .premium-service-card h4{
+        font-size: 32px;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .premium-service-card{
+        min-height: auto;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .premium-services{
+        padding: 90px 0;
+    }
+
+    .section-header h2{
+        font-size: 38px;
+    }
+
+    .section-header p{
+        font-size: 16px;
+    }
+
+    .premium-service-card{
+        padding: 32px;
+    }
+
+    .premium-service-card h4{
+        font-size: 28px;
+    }
+
+    .premium-service-card p{
+        font-size: 17px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .section-header h2{
+        font-size: 32px;
+    }
+
+    .service-icon{
+        width: 70px;
+        height: 70px;
+    }
+
+    .service-icon i{
+        font-size: 28px;
+    }
+
+}
+
+        /* =========================
+           STATS
+        ========================== */
+
+        .stats {
+            background: linear-gradient(to right, #000, #1c1c1c);
+            color: white;
+            padding: 100px 0;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-box h2 {
+            font-size: 60px;
+            color: #ffc107;
+            font-weight: 800;
+        }
+
+        .stat-box p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+      /* =========================
+   PREMIUM CONTACT SECTION
+========================= */
+
+.premium-contact{
+    padding: 120px 0;
+    background: #0f0f10;
+}
+
+/* main wrapper */
+
+.contact-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background: #151515;
+
+    border-radius: 40px;
+
+    overflow: hidden;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+}
+
+/* =========================
+   LEFT PANEL
+========================= */
+
+.contact-info{
+    position: relative;
+
+    padding: 80px 70px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,193,7,0.15),
+        rgba(0,0,0,0.95)
+    );
+}
+
+.contact-info::before{
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+    radial-gradient(
+        circle at top left,
+        rgba(255,193,7,0.12),
+        transparent 40%
+    );
+}
+
+.contact-info-content{
+    position: relative;
+    z-index: 2;
+}
+
+.contact-info h2{
+    font-size: 64px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.contact-info h2 span{
+    color: #d4af37;
+}
+
+.contact-info p{
+    color: rgba(255,255,255,0.7);
+    font-size: 20px;
+    line-height: 1.8;
+    max-width: 500px;
+    margin-bottom: 60px;
+}
+
+/* info items */
+
+.info-item{
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    margin-bottom: 40px;
+}
+
+.info-icon{
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    background: rgba(255,193,7,0.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffc107;
+
+    font-size: 24px;
+
+    flex-shrink: 0;
+}
+
+.info-item span{
+    display: block;
+
+    color: rgba(255,255,255,0.45);
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.info-item h5{
+    color: white;
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* =========================
+   FORM SIDE
+========================= */
+
+.contact-form-area{
+    padding: 80px 70px;
+    background: #1a1a1d;
+}
+
+/* labels */
+
+.input-group-custom label{
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: rgba(255,255,255,0.45);
+
+    font-size: 14px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 700;
+}
+
+/* input fields */
+
+.input-group-custom input,
+.input-group-custom textarea{
+    width: 100%;
+
+    background: rgba(255,255,255,0.04);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 18px;
+
+    padding: 18px 22px;
+
+    color: white;
+
+    font-size: 18px;
+
+    transition: all 0.3s ease;
+}
+
+.input-group-custom textarea{
+    height: 180px;
+    resize: none;
+}
+
+/* placeholder */
+
+.input-group-custom input::placeholder,
+.input-group-custom textarea::placeholder{
+    color: rgba(255,255,255,0.4);
+}
+
+/* focus */
+
+.input-group-custom input:focus,
+.input-group-custom textarea:focus{
+    outline: none;
+
+    border-color: #d4af37;
+
+    background: rgba(255,255,255,0.06);
+
+    box-shadow: 0 0 0 4px rgba(212,175,55,0.08);
+}
+
+/* button */
+
+.premium-submit-btn{
+    width: 100%;
+
+    border: none;
+
+    background: #d4af37;
+
+    color: black;
+
+    height: 72px;
+
+    border-radius: 18px;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    transition: 0.4s ease;
+}
+
+.premium-submit-btn i{
+    margin-left: 12px;
+}
+
+.premium-submit-btn:hover{
+    transform: translateY(-3px);
+
+    background: #f5cd47;
+
+    box-shadow: 0 15px 35px rgba(212,175,55,0.25);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px){
+
+    .contact-info h2{
+        font-size: 52px;
+    }
+
+    .info-item h5{
+        font-size: 22px;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .contact-wrapper{
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info,
+    .contact-form-area{
+        padding: 60px 40px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .premium-contact{
+        padding: 80px 0;
+    }
+
+    .contact-info h2{
+        font-size: 42px;
+    }
+
+    .contact-info p{
+        font-size: 16px;
+    }
+
+    .info-item{
+        align-items: flex-start;
+    }
+
+    .info-item h5{
+        font-size: 18px;
+    }
+
+    .premium-submit-btn{
+        height: 60px;
+        font-size: 20px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .contact-info,
+    .contact-form-area{
+        padding: 40px 25px;
+    }
+
+    .contact-info h2{
+        font-size: 34px;
+    }
+
+    .input-group-custom input,
+    .input-group-custom textarea{
+        padding: 16px 18px;
+        font-size: 16px;
+    }
+
+}
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #000;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-logo {
+            font-size: 36px;
+            font-weight: 800;
+        }
+
+        .footer-logo span {
+            color: #ffc107;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #ccc;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #ffc107;
+        }
+
+        .social-icons a {
+            color: white;
+            margin-right: 15px;
+            font-size: 22px;
+        }
+
+        .social-icons a:hover {
+            color: #ffc107;
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #999;
+        }
+
+        /* =========================
+           FLOAT BUTTON
+        ========================== */
+
+        .floating-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #ffc107;
+            color: black;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            font-size: 22px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media(max-width:992px) {
+            .hero-content h1 {
+                font-size: 50px;
+            }
+        }
+
+        @media(max-width:768px) {
+            .hero-content {
+                left: 5%;
+                right: 5%;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+
+            .contact-form {
+                padding: 30px;
+            }
+        }
+.brand-logo{
+    width: 140px;
+    height: 80px;
+    object-fit: contain;
+    transition: 0.4s;
+}
+
+.brand-logo:hover{
+    transform: scale(1.08);
+}
+.brand-logo-card{
+    background: #fff;
+    padding: 35px;
+    border-radius: 18px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+/* logo */
+.brand-logo{
+    width: 160px;
+    height: 90px;
+    object-fit: contain;
+    transition: all 0.4s ease;
+    z-index: 2;
+    position: relative;
+}
+
+/* hover effect background layer */
+.brand-logo-card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0);
+    transition: 0.4s ease;
+    z-index: 1;
+}
+
+/* hover state */
+.brand-logo-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.brand-logo-card:hover::before{
+    background: rgba(0,0,0,0.15);
+}
+
+/* keep logo visible */
+.brand-logo-card:hover .brand-logo{
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+<style>
+    /* =========================
+       TOP BRANDS
+    ========================== */
+
+    .top-brands {
+        background: #fff;
+    }
+
+    .brand-logo-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        height: 220px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: 0.4s;
+    }
+
+    .brand-logo-card:hover {
+        transform: translateY(-10px);
+        background: #111;
+    }
+
+    .brand-logo-card img {
+        max-width: 140px;
+        max-height: 90px;
+        object-fit: contain;
+        transition: 0.4s;
+    }
+
+    .brand-logo-card:hover img {
+        transform: scale(1.1);
+        filter: brightness(0) invert(1);
+    }
+
+    /* =========================
+       DEALERS
+    ========================== */
+
+    .authorized-dealers {
+        background: linear-gradient(to right, #f8f9fa, #ffffff);
+    }
+
+    .dealer-link {
+        text-decoration: none;
+    }
+
+    .dealer-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 25px;
+        height: 350px;
+        transition: 0.4s;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    .dealer-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .dealer-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .dealer-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top,
+                rgba(0, 0, 0, 0.9),
+                rgba(0, 0, 0, 0.1));
+    }
+
+    .dealer-content {
+        position: absolute;
+        bottom: 30px;
+        left: 25px;
+        color: white;
+    }
+
+    .dealer-content h4 {
+        font-size: 26px;
+        font-weight: 700;
+    }
+
+    .dealer-content p {
+        color: #ddd;
+    }
+
+    /* =========================
+       SPARES
+    ========================== */
+
+    .genuine-spares {
+        background: white;
+    }
+
+    .spares-card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 45px 25px;
+        text-align: center;
+        height: 240px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: 0.4s;
+    }
+
+    .spares-card:hover {
+        transform: translateY(-10px);
+        background: #111;
+        color: white;
+    }
+
+    .spares-card img {
+        max-width: 140px;
+        max-height: 90px;
+        object-fit: contain;
+        margin-bottom: 25px;
+        transition: 0.4s;
+    }
+
+    .spares-card:hover img {
+        filter: brightness(0) invert(1);
+        transform: scale(1.1);
+    }
+
+    .spares-card h5 {
+        font-weight: 700;
+    }
+
+.custom-navbar{
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    padding: 18px 0;
+}
+
+.custom-navbar.scrolled{
+    padding: 10px 0;
+    background: rgba(0,0,0,0.95);
+}
+
+.navbar-brand span{
+    color: #ffc107;
+}
+
+/* nav links */
+.nav-link{
+    position: relative;
+    margin-left: 15px;
+    font-weight: 500;
+    color: white !important;
+}
+
+.nav-link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #ffc107;
+    transition: 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active-link::after{
+    width: 100%;
+}
+</style>
+
+
+
+
+/* fix spacing for fixed navbar */
+   </head>
 
 <body>
-    <!-- Header Section -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <!-- Logo -->
-                <a class="navbar-brand" href="#">
-                    <img src="./images/Group.png" alt="Empero" class="logo">
+
+    <!-- NAVBAR -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+    <div class="container">
+
+        <a class="navbar-brand" href="#home">
+            EMPREO <span>GROUP</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link active-link" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#brands">Brands</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#dealers">Dealers</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<section class="hero" id="home">
+
+    <!-- VIDEO -->
+
+<video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto">
+
+    <source src="./videos/car-hero.mp4" type="video/mp4">
+
+</video>
+    <!-- OVERLAY -->
+
+    <div class="hero-overlay"></div>
+
+    <!-- CONTENT -->
+
+    <div class="container hero-container">
+
+        <div class="hero-content">
+
+            <h1>
+                Driving Innovation Forward
+            </h1>
+
+            <p>
+                Premium automotive, machinery and mobility solutions
+                designed for the future.
+            </p>
+
+            <a href="#brands" class="hero-btn">
+                Explore Brands
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- BRANDS -->
+
+    <section class="brands" id="brands">
+
+        <div class="container">
+
+            <div class="section-title" data-aos="fade-up">
+                <h2>Our Premium Brands</h2>
+                <p>Trusted partnerships with world-class automotive leaders.</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-6" data-aos="zoom-in">
+                    <div class="brand-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop">
+
+                        <div class="brand-overlay"></div>
+
+                        <div class="brand-content">
+                            <h4>Luxury Vehicles</h4>
+                            <p>Premium driving experience</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="zoom-in">
+                    <div class="brand-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop">
+
+                        <div class="brand-overlay"></div>
+
+                        <div class="brand-content">
+                            <h4>Heavy Machinery</h4>
+                            <p>Industrial power solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="zoom-in">
+                    <div class="brand-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=1200&auto=format&fit=crop">
+
+                        <div class="brand-overlay"></div>
+
+                        <div class="brand-content">
+                            <h4>Commercial Mobility</h4>
+                            <p>Future-ready transport systems</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="zoom-in">
+                    <div class="brand-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=1200&auto=format&fit=crop">
+
+                        <div class="brand-overlay"></div>
+
+                        <div class="brand-content">
+                            <h4>Automotive Excellence</h4>
+                            <p>Sales • Service • Support</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+<!-- =========================
+     TOP BRANDS SECTION
+========================== -->
+
+<section class="top-brands py-5" id="dealers">
+
+    <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+            <h2>Top Brands</h2>
+            <p>Explore our premium automotive and machinery partnerships.</p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Jaguar -->
+
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in">
+
+                <a href="https://retailers.landrover.in/empreo-prestige"
+                    target="_blank"
+                    class="dealer-link">
+
+                    <div class="brand-logo-card">
+
+                       <img 
+src="https://1000logos.net/wp-content/uploads/2021/04/Jaguar-logo.png"
+alt="Jaguar Logo"
+class="brand-logo">
+
+                    </div>
+
                 </a>
-                <!-- Toggle button for mobile view -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- Navbar Links -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <!-- First div with menu links centered -->
-                    <div class="menu-links mx-auto">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">ABOUT</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">BUSINESS</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">PORTFOLIO</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">BLOG</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
-                        </ul>
-                    </div>
-                    <!-- Second div with login and signup aligned to the right -->
-                    <div class="auth-links ms-auto">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="#">LOGIN</a></li>
-                            <li class="nav-item"><a class="nav-link signup-link" href="#">SIGN UP</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
 
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./images/tata-home-banner.jpg" class="d-block w-100" alt="Nexon iCNG">
-                </div>
-                <div class="carousel-item">
-                    <img src="./images/jcb-home-banner.jpg" class="d-block w-100" alt="Jaguar">
-                </div>
-                <div class="carousel-item">
-                    <img src="./images/jaguar-home-banner.jpg" class="d-block w-100" alt="Tata Motors">
-                </div>
-                <div class="carousel-item">
-                    <img src="./images/mg-home-banner.jpg" class="d-block w-100" alt="MG100">
-                </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+
+            <!-- MG -->
+
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in">
+
+                <a href="https://www.mgmotor.co.in/"
+                    target="_blank"
+                    class="dealer-link">
+
+                    <div class="brand-logo-card">
+                     <img
+src="./Images/MG-Logo-1952.png"
+class="brand-logo"
+alt="MG">
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <!-- Tata -->
+
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in">
+
+                <a href="https://cars.tatamotors.com/"
+                    target="_blank"
+                    class="dealer-link">
+
+                    <div class="brand-logo-card">
+
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg"
+                            alt="Tata">
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <!-- JCB -->
+
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in">
+
+                <a href="https://www.jcb.com/en-in"
+                    target="_blank"
+                    class="dealer-link">
+
+                    <div class="brand-logo-card">
+
+                     <img
+src="./Images/JCB-Logo.png"
+class="brand-logo"
+alt="JCB">
+                    </div>
+
+                </a>
+
+            </div>
+
         </div>
-    </header>
 
-    <!-- Featured Brands Section -->
-    <section class="#">
+    </div>
+
+</section>
+
+<!-- =========================
+     AUTHORIZED DEALERS
+========================== -->
+
+<section class="authorized-dealers py-5" >
+
+    <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+
+            <h2>Authorized Dealers</h2>
+
+            <p>
+                Click below to explore our authorized dealership inventory.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Empreo Prestige -->
+
+            <div class="col-lg-3 col-md-6" data-aos="fade-up">
+
+                <a href="https://retailers.landrover.in/empreo-prestige"
+                    target="_blank"
+                    class="dealer-link">
+
+                    <div class="dealer-card">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop"
+                            alt="Empreo Prestige">
+
+                        <div class="dealer-overlay"></div>
+
+                        <div class="dealer-content">
+
+                            <h4>Empreo Prestige</h4>
+
+                            <p>Luxury Vehicle Dealership</p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <!-- Empreo Wheels -->
+
+            <div class="col-lg-3 col-md-6" data-aos="fade-up">
+
+                <a href="https://www.mgbhubaneswar.co.in/contact-us"
+                    target="_blank"
+                    class="dealer-link">
+
+                    <div class="dealer-card">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop"
+                            alt="Empreo Wheels">
+
+                        <div class="dealer-overlay"></div>
+
+                        <div class="dealer-content">
+
+                            <h4>Empreo Wheels</h4>
+
+                            <p>Premium Mobility Solutions</p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <!-- Shreekhetra -->
+
+            <div class="col-lg-3 col-md-6" data-aos="fade-up">
+
+                <a href="https://shreekhetra.growbizzi.com/"
+                    target="_blank"
+                    class="dealer-link">
+
+                    <div class="dealer-card">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=1200&auto=format&fit=crop"
+                            alt="Shreekhetra">
+
+                        <div class="dealer-overlay"></div>
+
+                        <div class="dealer-content">
+
+                            <h4>Shreekhetra Automotives</h4>
+
+                            <p>Trusted Automotive Partner</p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <!-- Samal Equip -->
+
+            <div class="col-lg-3 col-md-6" data-aos="fade-up">
+
+                <a href="https://dealer-locator.jcb.com/jcb-samal-equip-samal-equip-construction-equipment-supplier-banarpal-angul-334112/Contact-Us"
+                    target="_blank"
+                    class="dealer-link">
+
+                    <div class="dealer-card">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=1200&auto=format&fit=crop"
+                            alt="Samal Equip">
+
+                        <div class="dealer-overlay"></div>
+
+                        <div class="dealer-content">
+
+                            <h4>Samal Equip</h4>
+
+                            <p>Construction Equipment Solutions</p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     GENUINE SPARES
+========================== -->
+
+<section class="genuine-spares py-5">
+
+    <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+
+            <h2>Genuine Spares & Machinery Solutions</h2>
+
+            <p>
+                Discover authentic spare parts and industrial machinery solutions.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Tata Hitachi -->
+
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in">
+
+                <a href="https://www.tatahitachi.co.in/"
+                    target="_blank"
+                    class="dealer-link">
+
+                    <div class="spares-card">
+
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg"
+                            alt="Tata Hitachi">
+
+                        <h5>Tata Hitachi</h5>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <!-- Tata Genuine -->
+
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in">
+
+                <a href="https://www.tatamotors.com/"
+                    target="_blank"
+                    class="dealer-link">
+
+                    <div class="spares-card">
+
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg"
+                            alt="Tata Genuine">
+
+                        <h5>Tata Genuine Parts</h5>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <!-- Bajaj -->
+
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in">
+
+                <a href="https://www.bajajauto.com/"
+                    target="_blank"
+                    class="dealer-link">
+
+                    <div class="spares-card">
+
+                       <img
+src="./Images/bajaj-genuine.png"
+alt="Bajaj"
+class="brand-logo">
+
+
+                        <h5>Bajaj Genuine</h5>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <!-- JCB -->
+
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in">
+
+                <a href="https://www.jcb.com/en-in"
+                    target="_blank"
+                    class="dealer-link">
+
+                    <div class="spares-card">
+
+                      <img
+src="./Images/JCB-Logo.png"
+class="brand-logo"
+alt="JCB">
+
+
+                        <h5>JCB Machinery</h5>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+   <!-- =========================
+     WHAT WE OFFER
+========================== -->
+
+<section class="premium-services" id="services">
+
+    <div class="container">
+
+        <!-- SECTION TITLE -->
+
+        <div class="section-header text-center" data-aos="fade-up">
+
+            <span class="section-tag">
+                OUR SERVICES
+            </span>
+
+            <h2>
+                What We Offer
+            </h2>
+
+            <p>
+                Delivering premium automotive, machinery and mobility
+                solutions with world-class support and innovation.
+            </p>
+
+        </div>
+
+        <!-- SERVICES GRID -->
+
+        <div class="row g-4">
+
+            <!-- CARD -->
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+
+                <div class="premium-service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+
+                    <h4>Vehicle Sales</h4>
+
+                    <p>
+                        Premium automotive dealership solutions tailored
+                        for luxury and commercial customers.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+
+                <div class="premium-service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+
+                    <h4>Energy Solutions</h4>
+
+                    <p>
+                        Sustainable power systems for industrial machinery
+                        and EV infrastructure.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+
+                <div class="premium-service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+
+                    <h4>Technical Support</h4>
+
+                    <p>
+                        24/7 expert maintenance and engineering support
+                        for all our brands.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+
+                <div class="premium-service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <h4>Supply Chain</h4>
+
+                    <p>
+                        Global logistics network ensuring seamless delivery
+                        of parts and vehicles.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+
+                <div class="premium-service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+
+                    <h4>Quality Assurance</h4>
+
+                    <p>
+                        Rigorous testing protocols meeting international
+                        safety and quality standards.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+
+                <div class="premium-service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+
+                    <h4>Customer Care</h4>
+
+                    <p>
+                        Bespoke concierge services for our premium
+                        automotive clientele.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    <!-- STATS -->
+
+    <section class="stats">
+
         <div class="container">
+
             <div class="row">
-                <div class="col-md-6">
-                    <a href="https://retailers.landrover.in/empreo-prestige" class="no-underline">
-                        <img class="brand-box" src="./images/empreo-prestige.jpg" alt="Empro Prestige">
-                        <p class="image-label">Empreo Prestige</p>
-                    </a>
+
+                <div class="col-md-3 col-6">
+                    <div class="stat-box">
+                        <h2 class="counter" data-target="30">0</h2>
+                        <p>Years Experience</p>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <a href="https://www.mgbhubaneswar.co.in/contact-us" class="no-underline">
-                        <img class="brand-box" src="./images/empreo-wheels.jpg" alt="Empro Wheels">
-                        <p class="image-label">Empreo Wheels</p>
-                    </a>
+
+                <div class="col-md-3 col-6">
+                    <div class="stat-box">
+                        <h2 class="counter" data-target="250">0</h2>
+                        <p>Thousand Customers</p>
+                    </div>
                 </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="stat-box">
+                        <h2 class="counter" data-target="3000">0</h2>
+                        <p>Employees</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="stat-box">
+                        <h2 class="counter" data-target="170">0</h2>
+                        <p>Awards Won</p>
+                    </div>
+                </div>
+
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <a href="https://shreekhetra.growbizzi.com/" class="no-underline">
-                        <img class="brand-box" src="./images/shreekhetra-automotives.jpg" alt="Shreekhetra">
-                        <p class="image-label">Shreekhetra Automotives</p>
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <a href="https://dealer-locator.jcb.com/jcb-samal-equip-samal-equip-construction-equipment-supplier-banarpal-angul-334112/Contact-Us"
-                        class="no-underline">
-                        <img class="brand-box" src="./images/samal-equip.jpg" alt="Samal">
-                        <p class="image-label">Samal Equip</p>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <a href="http://www.samalautoindia.com/home.php" class="no-underline">
-                        <img class="brand-box" src="./images/samal-auto.jpg" alt="Shreekhetra">
-                        <p class="image-label">Samal Auto India</p>
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <a href="https://samalmotors.com/" class="no-underline">
-                        <img class="brand-box" src="./images/samal-motors.jpg" alt="Samal">
-                        <p class="image-label">Samal Motors</p>
-                    </a>
-                </div>
-            </div>
+
         </div>
+
     </section>
 
-    <section class="#">
+ <!-- =========================
+     PREMIUM CONTACT / ENQUIRY SECTION
+========================== -->
+
+<section class="premium-contact" id="contact">
+
+    <div class="container-fluid px-lg-4">
+
+        <div class="contact-wrapper">
+
+            <!-- LEFT INFO PANEL -->
+
+            <div class="contact-info">
+
+                <div class="contact-info-content">
+
+                    <h2>
+                        Get in <span>Touch</span>
+                    </h2>
+
+                    <p>
+                        Have a query about our brands or services?
+                        Our executive team is ready to assist you.
+                    </p>
+
+                    <!-- ITEM -->
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+
+                        <div>
+                            <span>CALL US</span>
+                            <h5>+91 98765 43210</h5>
+                        </div>
+
+                    </div>
+
+                    <!-- ITEM -->
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div>
+                            <span>EMAIL US</span>
+                            <h5>inquiry@empreogroup.com</h5>
+                        </div>
+
+                    </div>
+
+                    <!-- ITEM -->
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div>
+                            <span>HEADQUARTERS</span>
+                            <h5>Bhubaneswar, Odisha, India</h5>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT FORM PANEL -->
+
+            <div class="contact-form-area">
+
+                <form class="premium-form">
+
+                    <div class="row g-4">
+
+                        <div class="col-md-6">
+
+                            <div class="input-group-custom">
+
+                                <label>FULL NAME</label>
+
+                                <input type="text"
+                                    placeholder="John Doe">
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="input-group-custom">
+
+                                <label>EMAIL ADDRESS</label>
+
+                                <input type="email"
+                                    placeholder="john@example.com">
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <div class="input-group-custom">
+
+                                <label>SUBJECT</label>
+
+                                <input type="text"
+                                    placeholder="Vehicle Inquiry">
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <div class="input-group-custom">
+
+                                <label>MESSAGE</label>
+
+                                <textarea
+                                    placeholder="How can we help you?"></textarea>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <button type="submit"
+                                class="premium-submit-btn">
+
+                                Send Message
+                                <i class="fa-regular fa-paper-plane"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
         <div class="container">
+
             <div class="row">
-                <div class="col-md-12">
-                    <a href="https://www.empreopremiumelv.com/lander" class="no-underline">
-                        <img class="brand-box2" src="./images/tata-motor-banner.jpg" alt="Empro Premium">
-                        <p class="image-label">Empreo Premium</p>
-                    </a>
+
+                <div class="col-lg-4 mb-4">
+
+                    <div class="footer-logo">
+                        EMPREO <span>GROUP</span>
+                    </div>
+
+                    <p class="mt-3 text-light">
+                        Delivering automotive excellence and industrial
+                        innovation for over 30 years.
+                    </p>
+
                 </div>
+
+                <div class="col-lg-4 mb-4">
+
+                    <h5 class="mb-4">Quick Links</h5>
+
+                    <div class="footer-links">
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Portfolio</a>
+                        <a href="#">Contact</a>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <h5 class="mb-4">Connect With Us</h5>
+
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+                </div>
+
             </div>
+
+            <div class="copyright">
+                © 2026 Empreo Group Of Companies. All Rights Reserved.
+            </div>
+
         </div>
-    </section>
 
-    <!-- Top Brand Section -->
-    <section class="#">
-        <h2 class="top-brand-header">Top Brands</h2>
-        <div class="underline">
-            <img src="./images/Home_heading_Underline-1.png" />
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <img class="top-brand" src="./images/jaguar.jpg" alt="Jaguar">
-                </div>
-                <div class="col-md-6">
-                    <img class="top-brand" src="./images/mg-100.jpg" alt="MG-100">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <img class="top-brand" src="./images/tata-motor.jpg" alt="Tata Motor ">
-                </div>
-                <div class="col-md-6">
-                    <img class="top-brand" src="./images/jcb.jpg" alt="JCB">
-                </div>
-            </div>
-        </div>
-    </section>
-    <br>
-
-    <!-- Black Patch Section -->
-    <!--<Section class="#">
-        <div class="black-patch">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-lg-3 icon-container">
-                        <a href="https://retailers.landrover.in/empreo-prestige" class="no-underline">
-                            <div class="icon-circle">
-                                <img src="./images/empreo-wheels-icon.png" alt="Empreo Prestige">
-                            </div>
-                            <div class="icon-label">Empreo Prestige</div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 icon-container">
-                        <a href="https://www.mgbhubaneswar.co.in/contact-us" class="no-underline">
-                            <div class="icon-circle">
-                                <img src="./images/empreo-wheels-icon.png" alt="Empreo Wheels">
-                            </div>
-                            <div class="icon-label">Empreo Wheels</div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 icon-container">
-                        <a href="https://shreekhetra.growbizzi.com/" class="no-underline">
-                            <div class="icon-circle">
-                                <img src="./images/shreekhetra-automotives-icon.png" alt="Shreekhetra Automotive">
-                            </div>
-                            <div class="icon-label">Shreekhetra Automotive</div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 icon-container">
-                        <a href="https://abinashsamal.in/#" class="no-underline">
-                            <div class="icon-circle">
-                                <img src="./images/samal-equip-icon.png" alt="Samal Equip">
-                            </div>
-                            <div class="icon-label">Samal Equip</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </Section>-->
-
-    <!-- Authorized Dealer Section -->
-    <section class="authorized-dealer">
-        <div class="container text-center">
-            <h2 class="authorized-dealer-header">Authorized Dealer</h2>
-            <p class="inventory">Click Below to Explore Our Inventory</p>
-            <div class="underline">
-                <img src="./images/Home_heading_Underline-1.png" alt="Underline" />
-            </div>
-            <div class="row">
-                <div class="col-6 col-md-3">
-                    <div class="shadow-box">
-                        <div class="image-container">
-                            <img src="./images/jaguar-logo 1.png" alt="Jaguar Logo" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="shadow-box">
-                        <div class="image-container">
-                            <img src="./images/image 10.png" alt="MG Motors Logo" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="shadow-box">
-                        <div class="image-container">
-                            <img src="./images/tata-motors-logo 1.png" alt="Tata Motors Logo" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="shadow-box">
-                        <div class="image-container">
-                            <img src="./images/JCB-Logo 2.png" alt="JCB Logo" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Genuine Spares Section -->
-    <section class="genuine-spares">
-        <div class="container text-center">
-            <h2 class="genuine-spares-dealer-header">Genuine Spares & Machinery Solutions</h2>
-            <p class="solution">Click Below to Discover Genuine Spare Parts and Heavy Machinery Solutions</p>
-            <div class="underline">
-                <img src="./images/Home_heading_Underline-1.png" alt="Underline" />
-            </div>
-            <div class="row">
-                <div class="col-6 col-md-3">
-                    <div class="shadow-boxx">
-                        <div class="image-containers">
-                            <img src="./images/tata-hitachi-logo.svg" alt="Tata Hitachi Logo" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="shadow-boxx">
-                        <div class="image-containers">
-                            <img src="./images/tata-genuine.png" alt="Tata Genuine Logo" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="shadow-boxx">
-                        <div class="image-containers">
-                            <img src="./images/bajaj-genuine.png" alt="Bajaj Genuine Logo" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="shadow-boxx">
-                        <div class="image-containers">
-                            <img src="./images/JCB-Logo 2.png" alt="JCB Logo" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Full-Service Automotive Solutions Section -->
-    <section id="automotive-solutions" class="automotive-section">
-        <div class="container section-wrapper">
-            <div class="row">
-                <!-- Left Column with Section Title -->
-                <div class="col-md-6 left-column">
-                    <h2 class="section-title">Full-Service Automotive Solutions</h2>
-                    <p class="section-text">Sales, maintenance, repairs, and buybacks – all under one roof.</p>
-                </div>
-
-                <!-- Right Column with Service Cards -->
-                <div class="col-md-6">
-                    <div class="card-list">
-                        <!-- Renew Insurance Card -->
-                        <div class="card-item">
-                            <img src="./images/trust.png" alt="Renew Insurance" class="card-image" loading="lazy">
-                            <div class="card-content">
-                                <h5>Renew Insurance</h5>
-                                <p>It's now effortless and straightforward to explore your renewal options with a quick
-                                    and
-                                    easy process.</p>
-                            </div>
-                            <button class="hover-btn">Get Quote</button>
-                        </div>
-
-                        <!-- Schedule Service Card -->
-                        <div class="card-item">
-                            <img src="./images/customers.png" alt="Schedule Service" class="card-image" loading="lazy">
-                            <div class="card-content">
-                                <h5>Schedule Service</h5>
-                                <p>Scheduling your next service appointment is quick and easy with just a few taps.</p>
-                            </div>
-                            <button class="hover-btn">Book Now</button>
-                        </div>
-
-                        <!-- Sell Your Car Card -->
-                        <div class="card-item">
-                            <img src="./images/employees.png" alt="Sell Your Car" class="card-image" loading="lazy">
-                            <div class="card-content">
-                                <h5>Sell Your Car</h5>
-                                <p>Looking to sell your car? It’s never been easier with our quick and hassle-free
-                                    process.
-                                </p>
-                            </div>
-                            <button class="hover-btn">Know More</button>
-                        </div>
-
-                        <!-- Your Voice Matters Card -->
-                        <div class="card-item">
-                            <img src="./images/awards.png" alt="Your Voice Matters" class="card-image" loading="lazy">
-                            <div class="card-content">
-                                <h5>Your Voice Matters</h5>
-                                <p>Whether You want to share a suggestion for improvement or raise a concern, We are
-                                    here to listen.</p>
-                            </div>
-                            <button class="hover-btn">Contact Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Vehicle Enquiry Form -->
-    <section class="vehicle-enquiry py-5">
-        <div class="container">
-            <h2 class="vehicle-enquiry-header">Vehicle Enquiry</h2>
-            <div class="underline">
-                <img src="./images/Home_heading_Underline-1.png" />
-            </div>
-            <form class="row g-3 mt-4">
-                <div class="custom-col-half">
-                    <input type="text" class="form-control" placeholder="Full Name">
-                </div>
-                <div class="custom-col-half">
-                    <input type="email" class="form-control" placeholder="Email Address">
-                </div>
-                <div class="custom-col-half">
-                    <input type="text" class="form-control" placeholder="Phone Number">
-                </div>
-                <div class="custom-col-half">
-                    <input type="text" class="form-control" placeholder="Vehicle Name">
-                </div>
-                <div class="custom-col-half">
-                    <select class="form-select">
-                        <option>Select Brand</option>
-                    </select>
-                </div>
-                <div class="custom-col-half">
-                    <select class="form-select">
-                        <option>Select Model</option>
-                    </select>
-                </div>
-                <div class="custom-col-full">
-                    <textarea class="form-control" placeholder="Additional Comments or Queries"></textarea>
-                </div>
-                <div class="button-submit">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- Why Us Section -->
-    <section class="why-us-section text-center">
-        <h2 class="why-us-header">Why Us?</h2>
-        <p>Our commitment to excellence has been the driving force behind our success,<br>
-            and we are proud to have served our valued customers for half a century.
-        </p>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-2 col-6">
-                    <img class="icon" src="./images/trust.png" alt="Trust">
-                    <div class="stat-number" data-count="30">0</div>
-                    <!-- <div class="stat-number">30+</div> -->
-                    <div class="stat-text">Years Of Trust</div>
-                </div>
-                <div class="col-md-2 col-6">
-                    <img class="icon" src="./images/customers.png" alt="Customers">
-                    <div class="stat-number" data-count="250000">0</div>
-                    <!-- <div class="stat-number">250K+</div> -->
-                    <div class="stat-text">Satisfied Customers</div>
-                </div>
-                <div class="col-md-2 col-6">
-                    <img class="icon" src="./images/employees.png" alt="Employees">
-                    <div class="stat-number" data-count="3000">0</div>
-                    <!-- <div class="stat-number">3000+</div> -->
-                    <div class="stat-text">Employees To Serve You</div>
-                </div>
-                <div class="col-md-2 col-6">
-                    <img class="icon" src="./images/awards.png" alt="Awards">
-                    <div class="stat-number" data-count="170">0</div>
-                    <!-- <div class="stat-number">170+</div> -->
-                    <div class="stat-text">Awards</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <hr class="my-4">
-            <div class="row text-center text-md-start">
-                <div class="col-md-3 mb-3">
-                    <img src="./images/Group.png" alt="Empero" class="footer-logo">
-                </div>
-                <div class="col-md-6 mb-3">
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a href="#">HOME</a></li>
-                        <li class="list-inline-item"><a href="#">ABOUT</a></li>
-                        <li class="list-inline-item"><a href="#">BUSINESS</a></li>
-                        <li class="list-inline-item"><a href="#">PORTFOLIO</a></li>
-                        <li class="list-inline-item"><a href="#">BLOG</a></li>
-                        <li class="list-inline-item"><a href="#">CONTACT</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 mb-3 text-md-end social-icons">
-                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-google"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
-            <hr class="my-4">
-            <div class="row text-center text-md-start">
-                <div class="col-md-3 mb-3">
-                    <p>Empreo Prestige<br>9938121214</p>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <p>Empreo Wheels<br>9938121214</p>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <p>Shreekhetra Automotives<br>9938121214</p>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <p>Samal Equip<br>9938121214</p>
-                </div>
-            </div>
-            <hr class="my-4">
-            <div class="row mt-3 text-center text-md-between">
-                <div class="col-md-6 mb-2 mb-md-0">
-                    <p class="mb-0">Copyright © 2024 Empreo. All rights reserved</p>
-                </div>
-                <div class="col-md-6 mb-2 mb-md-0 text-md-end">
-                    <p class="mb-0"><a href="#">Privacy Policy</a> • <a href="#">Terms & Conditions</a></p>
-                </div>
-            </div>
-        </div>
     </footer>
 
-    <!-- Floating Contact Button -->
-    <button class="floating-contact-btn">Contact us</button>
+    <!-- FLOATING BUTTON -->
 
+    <button class="floating-btn">
+        <i class="fa-solid fa-phone"></i>
+    </button>
 
-    <!-- Bootstrap 5 JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-        crossorigin="anonymous"></script>
+    <!-- SCRIPTS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
+</script>
     <script>
-        let slideIndex = 0;
-        showSlide(slideIndex);
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
 
-        function changeSlide(n) {
-            slideIndex += n;
-            showSlide(slideIndex);
-        }
+        // Counter Animation
 
-        function showSlide(index) {
-            const slides = document.getElementsByClassName('slide');
+        const counters = document.querySelectorAll('.counter');
 
-            if (index >= slides.length) {
-                slideIndex = 0; // Loop back to the first slide
-            }
-            if (index < 0) {
-                slideIndex = slides.length - 1; // Loop back to the last slide
-            }
+        counters.forEach(counter => {
 
-            for (let i = 0; i < slides.length; i++) {
-                slides[ i ].style.display = 'none'; // Hide all slides
-            }
+            counter.innerText = '0';
 
-            slides[ slideIndex ].style.display = 'block'; // Show the active slide
-        }
+            const updateCounter = () => {
 
-        // Optional: Auto-play functionality
-        setInterval(() => {
-            changeSlide(1); // Move to the next slide every 5 seconds
-        }, 2000);
-    </script>
+                const target = +counter.getAttribute('data-target');
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const counters = document.querySelectorAll('.stat-number');
+                const c = +counter.innerText;
 
-            const countUp = (counter) => {
-                const target = +counter.getAttribute('data-count');
-                let count = 0;
-                const speed = target / 200; // Adjust this for speed
+                const increment = target / 200;
 
-                const interval = setInterval(() => {
-                    count += speed;
-                    if (count > target) {
-                        count = target;
-                        clearInterval(interval);
-                    }
-                    counter.textContent = Math.floor(count);
-                }, 1);
+                if (c < target) {
+
+                    counter.innerText = `${Math.ceil(c + increment)}`;
+
+                    setTimeout(updateCounter, 10);
+
+                } else {
+
+                    counter.innerText = target;
+
+                }
+
             };
 
-            // Start counting when the section is in the viewport
-            const observer = new IntersectionObserver((entries) => {
-                if (entries[ 0 ].isIntersecting) {
-                    counters.forEach(counter => countUp(counter));
-                    observer.disconnect(); // Stop observing after counting
-                }
-            });
+            updateCounter();
 
-            observer.observe(document.querySelector('.why-us-section'));
         });
     </script>
+
+<script>
+// Smooth scroll + mobile close
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e){
+
+        const targetId = this.getAttribute('href');
+
+        if(targetId.startsWith("#")){
+            e.preventDefault();
+
+            document.querySelector(targetId).scrollIntoView({
+                behavior: "smooth"
+            });
+
+            // close mobile menu
+            const nav = document.querySelector("#navMenu");
+            if(nav.classList.contains("show")){
+                new bootstrap.Collapse(nav).hide();
+            }
+        }
+    });
+});
+
+// active link highlight on scroll
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+
+        if(pageYOffset >= sectionTop){
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active-link");
+        if(link.getAttribute("href") === "#" + current){
+            link.classList.add("active-link");
+        }
+    });
+
+    // navbar shrink effect
+    const navbar = document.querySelector(".custom-navbar");
+
+    if(window.scrollY > 50){
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+
+});
+</script>
+<script>
+window.addEventListener("scroll", function () {
+
+    const navbar = document.querySelector(".custom-navbar");
+
+    if(window.scrollY > 50){
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+
+});
+</script>
 </body>
 
 </html>
